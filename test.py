@@ -7,11 +7,11 @@ logging.basicConfig(level=logging.INFO, filename='app.log',
                     filemode='w', format='%(name)s - %(levelname)s - %(message)s')
 logger = logging.getLogger()
 
-# override tweepy.StreamListener to add own code to on_status
-
 
 class Listener(tweepy.StreamListener):
-
+     """
+      This is a class which overrides tweepy.StreamListener and adds own code.
+    """
     usernames = []
 
     def __init__(self, api):
@@ -19,6 +19,11 @@ class Listener(tweepy.StreamListener):
         self.me = api.me()
 
     def on_status(self, tweet):
+        """
+            Attributes: 
+            self (object): Listener object. 
+            tweet (object): Status object. 
+        """
         print("On status block")
         logger.info(f"Processing tweet id {tweet.id}")
         # print(tweet.user.screen_name)
@@ -34,15 +39,26 @@ class Listener(tweepy.StreamListener):
             logger.info(f"Liked tweet {tweet.id}")
         user = self.api.get_user(tweet.user.screen_name)
         follow(self.api, user)
+        # to increase the time taken for hits
         time.sleep(2.4)
 
     def on_error(self, status_code):
+        """
+            Attributes: 
+            self (object): Listener object. 
+            status_code (int): Error code. 
+            """
         if status_code == 420:
             # returning False in on_error disconnects the stream
             return False
 
 
 def follow_usernames(api, usernames):
+    """
+    Attributes: 
+        api (object): tweepy.API() object which is the bot's account authenticated using the given keys. 
+        usernames (list): List of usernames input which have to be followed. 
+    """
     for name in usernames:
         try:
             user = api.get_user(name)
@@ -53,7 +69,12 @@ def follow_usernames(api, usernames):
 
 
 def follow(api, user):
-    #print("Follow block")
+    """
+    Attributes: 
+        api (object): tweepy.API() object which is the bot's account authenticated using the given keys. 
+        user (object): User object. 
+    """
+    # print("Follow block")
     if not user.following:
         try:
             api.create_friendship(user.id)
@@ -64,6 +85,9 @@ def follow(api, user):
 
 
 def main():
+    """
+    Inputs from the command line or uses inbuilt lists.
+    """
     choice = int(input("Input through command line or inbuilt ? 1 | 2 : "))
     if choice == 1:
         keywords = []
@@ -89,10 +113,18 @@ def main():
 
     print(keywords)
     print(usernames)
+    """
+    Connects to the bot's twitter developer account and uses the keys given in connection.py
+    """
     api = connect_account()
-
+    """
+    Follows usernames in the list
+    """
     follow_usernames(api, usernames)
 
+    """
+    Looks for tweets with the given hashtags in the stream
+    """
     tweets_listener = Listener(api)
     stream = tweepy.Stream(api.auth, tweets_listener)
     stream.filter(track=keywords, languages=["en"])
