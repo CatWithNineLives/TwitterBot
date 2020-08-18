@@ -16,7 +16,7 @@ conda create -n twitter_environment pip3 python=3.7 tweepy=3.9.0
 --cd into local copy of the repo
 
 
-python gui.py  <-- runs the tkinter GUI, inputs hashtags and usernames from the user till the window is closed. 
+python gui.py  <-- runs the tkinter GUI, inputs hashtags and usernames from the user in the interactive window. 
 
 
 python test.py <-- inputs the values of hashtags and usernames from the user through the command line or uses inbuilt values of hashtags and usernames.
