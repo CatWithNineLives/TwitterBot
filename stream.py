@@ -19,6 +19,7 @@ class Listener(tweepy.StreamListener):
         self.me = api.me()
 
     def on_status(self, tweet):
+        print("On status block")
         logger.info(f"Processing tweet id {tweet.id}")
         # print(tweet.user.screen_name)
         self.usernames.append(tweet.user.screen_name)
@@ -52,6 +53,7 @@ def follow_usernames(api, usernames):
 
 
 def follow(api, user):
+    print("Follow block")
     if not user.following:
         try:
             api.create_friendship(user.id)
@@ -59,7 +61,7 @@ def follow(api, user):
             logger.error("Error on following", exc_info=True)
 
 
-def main():
+# def main():
     #keywords = []
     #usernames = []
 
@@ -77,19 +79,24 @@ def main():
     #         break
     #     usernames.append(input("Input the screen_names"))
 
-    keywords = ["#POSTPONEJEE_NEET", "#SCpostponeJEE_NEET",
-                "#jeeneetpostpone", "#neetjeepostpone"]
+    # keywords = ["#POSTPONEJEE_NEET", "#SCpostponeJEE_NEET","#jeeneetpostpone", "#neetjeepostpone"]
     # print(keywords)
-    usernames = ["DrRPNishank", "myogiadityanath", "ZeeNews"]
+    #usernames = ["DrRPNishank", "myogiadityanath", "ZeeNews"]
 
-    api = connect_account()
+    #api = connect_account()
 
-    follow_usernames(api, usernames)
+    #follow_usernames(api, usernames)
 
+    # tweets_listener = Listener(api)
+    # stream = tweepy.Stream(api.auth, tweets_listener)
+    # stream.filter(track=keywords, languages=["en"])
+
+def listen(api, keywords):
+    print("Listen block")
     tweets_listener = Listener(api)
     stream = tweepy.Stream(api.auth, tweets_listener)
     stream.filter(track=keywords, languages=["en"])
 
 
-if __name__ == "__main__":
-    main()
+# if __name__ == "__main__":
+#    main()

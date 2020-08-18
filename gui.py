@@ -1,7 +1,16 @@
 from tkinter import *
 from stream import *
+from connection import connect_account
+import logging
 # main function should be added to this file instead
 # api connections should be formed and then call stream functions
+
+
+logging.basicConfig(level=logging.INFO, filename='app.log',
+                    filemode='w', format='%(name)s - %(levelname)s - %(message)s')
+logger = logging.getLogger()
+
+api = connect_account()
 
 
 def buttonPressed():
@@ -13,9 +22,12 @@ def buttonPressed():
     if v.get() == 1:
         print("Hashtags :", l)
         # call stream function from stream file
+        listen(api, l)
+
     elif v.get() == 2:
         print("Usernames :", l)
         # call stream function
+        follow_usernames(api, l)
 
     else:
         print("Invalid")
