@@ -1,0 +1,14 @@
+Metadata-Version: 1.2
+Name: botexecutable-CatWithNineLives
+Version: 0.0.1
+Summary: Python executable for a twitter bot.
+Home-page: https://github.com/CatWithNineLives/TwitterBot
+Author: Nivedita Singh
+Author-email: niveditasingh0627@gmail.com
+License: UNKNOWN
+Description: UNKNOWN
+Platform: UNKNOWN
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.7

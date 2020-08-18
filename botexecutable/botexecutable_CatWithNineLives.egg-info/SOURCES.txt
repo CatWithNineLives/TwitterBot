@@ -1,0 +1,5 @@
+setup.py
+botexecutable_CatWithNineLives.egg-info/PKG-INFO
+botexecutable_CatWithNineLives.egg-info/SOURCES.txt
+botexecutable_CatWithNineLives.egg-info/dependency_links.txt
+botexecutable_CatWithNineLives.egg-info/top_level.txt

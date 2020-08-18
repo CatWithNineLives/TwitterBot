@@ -1,0 +1,5 @@
+setup.py
+botexecutable.egg-info/PKG-INFO
+botexecutable.egg-info/SOURCES.txt
+botexecutable.egg-info/dependency_links.txt
+botexecutable.egg-info/top_level.txt
