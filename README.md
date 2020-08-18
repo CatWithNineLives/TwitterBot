@@ -6,6 +6,8 @@ Using the hashtags input the bot crawls throught the web searching for those has
 Using the usernames input the bot searches for those usernames and follows them.
 
 python gui.py  <-- runs the tkinter GUI, inputs hashtags and usernames from the user till the window is closed. 
+
+
 python test.py <-- inputs the values of hashtags and usernames from the user through the command line or uses inbuilt values of hashtags and usernames.
 
 
