@@ -1,0 +1,89 @@
+root - INFO - API created
+root - INFO - Processing tweet id 1295597223246352385
+root - INFO - Processing tweet id 1295597223984603137
+root - INFO - Processing tweet id 1295597224009723905
+root - INFO - Processing tweet id 1295597224320102402
+root - INFO - Processing tweet id 1295597224500461569
+root - INFO - Processing tweet id 1295597224504651776
+root - INFO - Processing tweet id 1295597225226182657
+root - INFO - Processing tweet id 1295597225398210560
+root - INFO - Processing tweet id 1295597225599315968
+root - INFO - Processing tweet id 1295597225771327488
+root - ERROR - Error on liking
+Traceback (most recent call last):
+  File "c:\Users\Josh\Desktop\twitterbots\stream.py", line 30, in on_status
+    tweet.favorite()
+  File "C:\Users\Josh\Desktop\twitterbots\twitterenv\lib\site-packages\tweepy\models.py", line 127, in favorite
+    return self._api.create_favorite(self.id)
+  File "C:\Users\Josh\Desktop\twitterbots\twitterenv\lib\site-packages\tweepy\binder.py", line 252, in _call
+    return method.execute()
+  File "C:\Users\Josh\Desktop\twitterbots\twitterenv\lib\site-packages\tweepy\binder.py", line 234, in execute
+    raise TweepError(error_msg, resp, api_code=api_error_code)
+tweepy.error.TweepError: [{'code': 139, 'message': 'You have already favorited this status.'}]
+root - INFO - Processing tweet id 1295597226572447744
+root - INFO - Processing tweet id 1295597227365163010
+root - INFO - Processing tweet id 1295597227524550657
+root - ERROR - Error on liking
+Traceback (most recent call last):
+  File "c:\Users\Josh\Desktop\twitterbots\stream.py", line 30, in on_status
+    tweet.favorite()
+  File "C:\Users\Josh\Desktop\twitterbots\twitterenv\lib\site-packages\tweepy\models.py", line 127, in favorite
+    return self._api.create_favorite(self.id)
+  File "C:\Users\Josh\Desktop\twitterbots\twitterenv\lib\site-packages\tweepy\binder.py", line 252, in _call
+    return method.execute()
+  File "C:\Users\Josh\Desktop\twitterbots\twitterenv\lib\site-packages\tweepy\binder.py", line 234, in execute
+    raise TweepError(error_msg, resp, api_code=api_error_code)
+tweepy.error.TweepError: [{'code': 139, 'message': 'You have already favorited this status.'}]
+root - INFO - Processing tweet id 1295597228053020674
+root - INFO - Processing tweet id 1295597228333993984
+root - ERROR - Error on liking
+Traceback (most recent call last):
+  File "c:\Users\Josh\Desktop\twitterbots\stream.py", line 30, in on_status
+    tweet.favorite()
+  File "C:\Users\Josh\Desktop\twitterbots\twitterenv\lib\site-packages\tweepy\models.py", line 127, in favorite
+    return self._api.create_favorite(self.id)
+  File "C:\Users\Josh\Desktop\twitterbots\twitterenv\lib\site-packages\tweepy\binder.py", line 252, in _call
+    return method.execute()
+  File "C:\Users\Josh\Desktop\twitterbots\twitterenv\lib\site-packages\tweepy\binder.py", line 234, in execute
+    raise TweepError(error_msg, resp, api_code=api_error_code)
+tweepy.error.TweepError: [{'code': 139, 'message': 'You have already favorited this status.'}]
+root - INFO - Processing tweet id 1295597229990805505
+root - ERROR - Error on liking
+Traceback (most recent call last):
+  File "c:\Users\Josh\Desktop\twitterbots\stream.py", line 30, in on_status
+    tweet.favorite()
+  File "C:\Users\Josh\Desktop\twitterbots\twitterenv\lib\site-packages\tweepy\models.py", line 127, in favorite
+    return self._api.create_favorite(self.id)
+  File "C:\Users\Josh\Desktop\twitterbots\twitterenv\lib\site-packages\tweepy\binder.py", line 252, in _call
+    return method.execute()
+  File "C:\Users\Josh\Desktop\twitterbots\twitterenv\lib\site-packages\tweepy\binder.py", line 234, in execute
+    raise TweepError(error_msg, resp, api_code=api_error_code)
+tweepy.error.TweepError: [{'code': 139, 'message': 'You have already favorited this status.'}]
+root - INFO - Processing tweet id 1295597230112440321
+root - INFO - Processing tweet id 1295597230234013696
+root - ERROR - Error on liking
+Traceback (most recent call last):
+  File "c:\Users\Josh\Desktop\twitterbots\stream.py", line 30, in on_status
+    tweet.favorite()
+  File "C:\Users\Josh\Desktop\twitterbots\twitterenv\lib\site-packages\tweepy\models.py", line 127, in favorite
+    return self._api.create_favorite(self.id)
+  File "C:\Users\Josh\Desktop\twitterbots\twitterenv\lib\site-packages\tweepy\binder.py", line 252, in _call
+    return method.execute()
+  File "C:\Users\Josh\Desktop\twitterbots\twitterenv\lib\site-packages\tweepy\binder.py", line 234, in execute
+    raise TweepError(error_msg, resp, api_code=api_error_code)
+tweepy.error.TweepError: [{'code': 139, 'message': 'You have already favorited this status.'}]
+root - INFO - Processing tweet id 1295597231668510721
+root - ERROR - Error on liking
+Traceback (most recent call last):
+  File "c:\Users\Josh\Desktop\twitterbots\stream.py", line 30, in on_status
+    tweet.favorite()
+  File "C:\Users\Josh\Desktop\twitterbots\twitterenv\lib\site-packages\tweepy\models.py", line 127, in favorite
+    return self._api.create_favorite(self.id)
+  File "C:\Users\Josh\Desktop\twitterbots\twitterenv\lib\site-packages\tweepy\binder.py", line 252, in _call
+    return method.execute()
+  File "C:\Users\Josh\Desktop\twitterbots\twitterenv\lib\site-packages\tweepy\binder.py", line 234, in execute
+    raise TweepError(error_msg, resp, api_code=api_error_code)
+tweepy.error.TweepError: [{'code': 139, 'message': 'You have already favorited this status.'}]
+root - INFO - Processing tweet id 1295597231928520710
+root - INFO - Processing tweet id 1295597232146640897
+root - INFO - Processing tweet id 1295597233048412163
