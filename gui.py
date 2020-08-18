@@ -1,14 +1,18 @@
 from tkinter import *
 from stream import *
+# main function should be added to this file instead
+# api connections should be formed and then call stream functions
 
 
 def buttonPressed():
+
     print("Button pressed")
     print(v.get())
     l = e1.get().split(",")
+
     if v.get() == 1:
         print("Hashtags :", l)
-        # call stream function
+        # call stream function from stream file
     elif v.get() == 2:
         print("Usernames :", l)
         # call stream function
