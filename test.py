@@ -21,14 +21,15 @@ class Listener(tweepy.StreamListener):
     def on_status(self, tweet):
         print("On status block")
         logger.info(f"Processing tweet id {tweet.id}")
+        # print(tweet.user.screen_name)
         self.usernames.append(tweet.user.screen_name)
+        # print(len(tweets))
 
         if not tweet.favorited:
             # Like if not done yet
             try:
                 tweet.favorite()
             except Exception as e:
-                logger.info(f"Already Liked tweet {tweet.id}")
                 logger.error("Error on liking", exc_info=True)
             logger.info(f"Liked tweet {tweet.id}")
         user = self.api.get_user(tweet.user.screen_name)
@@ -52,18 +53,50 @@ def follow_usernames(api, usernames):
 
 
 def follow(api, user):
-    print("Follow block")
+    #print("Follow block")
     if not user.following:
         try:
             api.create_friendship(user.id)
         except Exception as e:
             logger.info(f"Already following {user.name}")
             logger.error("Error on following", exc_info=True)
-        logger.info(f"Followed {user.name}")
+    logger.info(f"Followed {user.name}")
 
 
-def listen(api, keywords):
-    print("Listen block")
+def main():
+    choice = int(input("Input through command line or inbuilt ? 1 | 2 : "))
+    if choice == 1:
+        keywords = []
+        usernames = []
+
+        print("Input hashtags alongwith #")
+        while True:
+            ch = int(input("Continue? 1 for Y 0 for N"))
+            if ch == 0:
+                break
+            keywords.append(input("Input the keywords"))
+
+        print("Input usernames without @")
+        while True:
+            ch = int(input("Continue? 1 for Y 0 for N"))
+            if ch == 0:
+                break
+            usernames.append(input("Input the screen_names"))
+    else:
+        keywords = ["#POSTPONEJEE_NEET", "#SCpostponeJEE_NEET",
+                    "#jeeneetpostpone", "#neetjeepostpone"]
+        usernames = ["DrRPNishank", "myogiadityanath", "ZeeNews"]
+
+    print(keywords)
+    print(usernames)
+    api = connect_account()
+
+    follow_usernames(api, usernames)
+
     tweets_listener = Listener(api)
     stream = tweepy.Stream(api.auth, tweets_listener)
     stream.filter(track=keywords, languages=["en"])
+
+
+if __name__ == "__main__":
+    main()
